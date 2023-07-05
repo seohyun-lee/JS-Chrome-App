@@ -68,23 +68,24 @@
 
 
 // //#2.6 Objects
-const player = {
-    name: "nico",
-    points : 10,
-    fat: true,
-};
+// const player = {
+//     name: "nico",
+//     points : 10,
+//     fat: true,
+// };
 
-console.log(player); //출력: {name: 'nico', points: 10, fat: true}
-console.log(player.name); //하나의 property 출력
-console.log(player["name"]); //위와 같은 결과
+// console.log(player); //출력: {name: 'nico', points: 10, fat: true}
+// console.log(player.name); //하나의 property 출력
+// console.log(player["name"]); //위와 같은 결과
 
-//property 업데이트 가능.
-player.fat = false;
-player.points+=15;
-console.log(player);
+// //property 업데이트 가능.
+// player.fat = false;
+// player.points+=15;
+// console.log(player);
 
-//아래에서 바로 신규 property 추가할 수 있음.
-player.lastName="potato";
-console.log(player);
+// //아래에서 바로 신규 property 추가할 수 있음.
+// player.lastName="potato";
+// console.log(player);
 
-
+//#2.7 Functions part One
+//fucntion을 배운다~
