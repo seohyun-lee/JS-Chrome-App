@@ -6,6 +6,8 @@
 // console.log(title.id);       //title
 // console.log(title.className);//hello
 
+
+
 // //#3.2 Searching For Elements
 
 // //getElementById()는 하나의 element 반환 (단점: 하위요소 못 가져옴)
