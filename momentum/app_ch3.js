@@ -102,8 +102,6 @@
 // h1.addEventListener("mouseenter", handleMouseEnter);
 // h1.addEventListener("mouseleave", handleMouseLeave);
 
-
-
 // //#3.5 More Events
 // //위의 코드를 이렇게 할 수도 있다
 // //h1.onclick = handleTitleClick;
@@ -136,3 +134,54 @@
 
 
 
+// //#3.6 CSS in Javascript 
+// const h1 = document.querySelector("div.hello:first-child h1");
+// function handleTitleClick(){
+//     const currentColor = h1.style.color;
+//     let newColor;
+//     if(currentColor === "blue"){
+//         newColor = "tomato";
+//     } else {
+//         newColor = "blue";
+//     }
+//     h1.style.color = newColor;
+// }
+
+// h1.addEventListener("click", handleTitleClick);
+
+
+
+// //#3.7 CSS in Javascript part Two
+// //CSS 파일 사용, className 사용
+// const h1 = document.querySelector("div.hello:first-child h1");
+// function handleTitleClick(){
+//     const clickedClass = "clicked";
+//     if(h1.className===clickedClass){
+//         h1.className="";
+//     } else {
+//         h1.className=clickedClass;
+//     }
+// }
+
+// h1.addEventListener("click", handleTitleClick);
+
+
+
+//#3.8 CSS in Javascript part Three
+//classList 사용
+const h1 = document.querySelector("div.hello:first-child h1");
+function handleTitleClick(){
+    const clickedClass = "clicked";
+    /*
+    if(h1.classList.contains(clickedClass)){
+        h1.classList.remove(clickedClass);
+    } else {
+        h1.classList.add(clickedClass);
+    }
+    */
+    h1.classList.toggle("clicked");
+    //toggle은 h1의 classList에 clicked class(토큰)가 이미 있는지 확인한다.
+    //clicked가 만약 있다면 제거하고 없다면 추가한다.
+}
+
+h1.addEventListener("click", handleTitleClick);

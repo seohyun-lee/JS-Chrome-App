@@ -1,3 +1,16 @@
 body {
     background-color: beige;
 }
+
+h1 {
+    color: cornflowerblue;
+    transition: color 0.3s ease-in-out;
+}
+
+.clicked { /*클래스. 어떤 element든 활성화 시의 color를 tomato로 지정.*/
+    color:tomato;
+}
+
+.cool-font {
+    font-family: 'Times New Roman', Times, serif;
+}
