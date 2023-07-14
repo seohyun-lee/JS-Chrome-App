@@ -1,0 +1,151 @@
+모든 브라우저는 HTML, CSS, JS로 만들어져 있다. 웹 브라우저에 내장되어 있음. 설치할 필요 없음. 모든 컴퓨터가 자바스크립트 실행함. 프론트엔드는 자바스크립트 외의 옵션이 없음. 대신 자바스크립트만 배우면 끝!
+three.js 는 자바스크립트로 3D를 구현하게 해주는 라이브러리임
+데이터 시각화 예시 (짱이다...)
+내셔널지오그래픽
+비디오게임
+3D모델링만 조금 도움받으면 돼
+NGO 자바스크립트 쩐다
+상호작용 귀여웡
+프레임워크
+리액트 네이티브는 자바스크립트 만으로 안드로이드랑 IOS 앱을 만들게 해줌
+쩐당
+#2.0
+alert("hi") 경고창 띄움
+js나 css 파일을 브라우저에 끌어다놓으면 열 수 있지만 파일 안의 내용을 보여주기만 함
+이 자바스크립트 파일을 실행하려면?
+브라우저는 이런식으로는 파일을 실행x
+어떻게할까?
+HTML이 중간 접착제 같은 역할!
+브라우저는 HTML을 열고, HTML은 CSS와 자바스크립트를 가져와 실행
+어떻게 할까? 해보자
+index.html에서 ! 입력하면 기본값 띄워줌
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> <!--css 실행-->
+    <title>Momentum</title>
+</head>
+<body>
+    <script src="app.js"></script>  <!--js 실행-->
+</body>
+</html>
+
+html 열면 css와 자바스크립트 엔진 같이 돌아감 (브라우저가 실행되어야 하는 파일이 있다는 것을 확인했을 때~)
+
+웹사이트에서 검사를 클릭했을 때
+요소(Elements): HTML
+스타일(Styles): CSS
+콘솔(Console): Javascript임
+
+----
+#2.1 Basic Data Types (04:32)
+Types
+Integer, Float, Text, String "hello"
+String은 홑따옴표 써도 되고 쌍따옴표 써도 됨
+console.log();로 콘솔에 출력함
+----
+#2.2 Variables (10:39)
+변수 생성 위해서 const 사용
+const a = 1;
+const hisName = "nico";
+----
+#2.3 const and let (09:45)
+변수 let으로 만들수도 있다
+결과는 달라지지 않음요
+const는 상수, 값이 바뀌지 않음
+let은 변수, 값이 바뀔 수 있음
+const로 상수변수를 생성하고 값을 바꾸면 에러. constant variable에는 새로운 값을 대입할 수 없다.
+
+따라서 변수는 대부분 const로 만들고 필요할 때만 let을 사용!
+과거엔 const, let 안쓰고 var을 씀. 어디서나 업데이트 가능.. 근데 이러면 언어를 통해 보호받을 수 없음. var은 쓰지 말것.
+기본적으로 const 쓰고
+업데이트 허용되어야 하는경우에 let 사용.
+----
+#2.4 Booleans (07:22)
+true
+false
+null		//변수가 존재하고, 값이 주어졌는데, 그 값이 "비어있음" 인 것!
+undefined 	//변수가 존재하고, 값이 주어지지 않음!
+----
+#2.5 Arrays
+const daysOfWeek = [a, b, c]; 배열 만든다
+시작과 끝에 대괄호, 각각의 요소는 컴마로 구분
+무슨 타입을 넣든 상관없음
+배열 요소 꺼내기? console.log(toBuy[5]);
+배열끝에 추가하기?  toBuy.push("coke");
+배열 인덱스가 요소가 넣어져 있지 않으면= 값이 없으면 undefined
+----
+#2.6 Objects
+객체를 만들고 변수들을 어케 만들 수 있을까?
+player.name, player.points 이런걸 하고싶음요!
+만약 배열로 넣는다면 의미를 얻을수가 없음 ㅠㅠ
+player[0] == name 이렇게 일일이 주석은 비효율적...
+중괄호 사용, 맨 끝에는 세미콜론 붙인다. 중괄호 안에서는 컴마로 구분한다. 맨 마지막 것까지 컴마 사용!
+const player = {
+    name: "nico",
+    points : 10,
+    fat: true,
+};
+object라는 걸 배웠다
+property를 생성한다
+처음에 안 만들어도 나중에 존재하지 않았던 것을 만들어 넣을 수 있고, 만약 존재한다면 업데이트를 할 수 있다
+
+----
+//#2.7 Functions part One
+fucntion을 배운다
+argument
+sayHello("nico"); //이게 argument, 전달인자. 값이다. 
+function sayHello(nameOfPerson){ } //소괄호 안에 있는 것이 parameter, 매개변수이다.
+nameOfPerson라는 variable을 만듬 (다른 언어처럼 매개변수 선언시 타입 적을 필요 없음)
+String 출력과 변수 출력을 번갈아가면서 하고 싶을 때는 + 기호를 이용한다 (자바처럼)
+----
+#2.8 Functions part Two (12:45)
+NaN(Not A Number): 연산과정에서 잘못된 입력으로 인해 계산을 할 수 없음을 나타냄. 매개변수 두개 있어서 argument 두개 줘야하는데 하나만 준 경우 NaN이 뜬다.
+
+object에 변수 뿐 아니라 함수 만들어서 쓰는법
+const player = {
+	name: "nico",
+	sayHello: function(personName){
+		console.log("Hello "+personName);
+	}
+};
+console.log(player.name);
+player.sayHello("lynn");
+
+----
+#2.9 Recap I
+#2.10 Recap II
+
+
+plus(5, 10, 12, 34) 
+parameter 개수보다 많은 arguments를 적어놓아도 오류 뜨지 않는다. 순서대로, parameter 개수만큼만 사용한다.
+
+#2.11 Returns 
+return 사용
+#2.12 Recap
+#2.13 Conditionals 
+prompt
+parseInt()- String입력을 Int로 바꾸기
+
+//추가로 찾아본 내용 - 자바스크립트의 기본 창
+alert("This is alert!"); //확인 버튼 존재
+confirm("This is confirm?"); //확인, 취소 버튼 존재
+prompt("This is prompt"); //값을 입력하는 공간과 확인, 취소 버튼 존재
+
+
+#2.14 Conditionals part Two
+조건문
+if(condition){
+} else {
+}
+isNaN() : 값이 NaN인지 판별 (그 값이 true면 NaN임)
+
+#2.15 Conditionals part Three
+else if 배움
+and: 	&&
+or: 	||
+값만 같은지 비교할때는 == (다른지는 !=)
+값 뿐 아니라 타입까지 같은지 비교할때는 === 등호 기호 3개 (다른지는 !==)

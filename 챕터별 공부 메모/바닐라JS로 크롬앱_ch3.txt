@@ -1,0 +1,119 @@
+#3.0 The Document Object
+document.title
+JS파일에서 html 값 수정 및 변경도됨.
+둘은 연결되어있어~
+html에서 항목들 가져오고 사용하는 방법 배울것이에요~
+
+#3.1 HTML in Javascript 
+document 객체 많이쓸것이에요
+HTML 에서 body 태그 안에 <h1 class="hello" id="title">Grab me!</h1> 라고 쓰고
+JS에서 const title = document.getElementById("title");
+console.log(title);
+console.dir(title);
+title.innerText ="Got You!";
+document.getElementById("title") 라 하면
+innetText가 나중에 바뀌지만..! 바뀐 innerText로 모든 콘솔에 출력됨
+
+document는 object이고 함수들을 내장하고 있음
+js에서 html elements 가져오는 방법 배웠따
+
+우린 html에서 항목들을 가지고 와서 , js를 통해 항목들을 변경할 거야
+]
+
+
+//#3.2 Searching For Elements
+console.dir은 object로 표시한 element를 보여준다
+- getElementById() : id 이름으로 가져옴. 하나의 element만 가져옴.
+- getElementsByClassName() : 클래스 이름으로 가져옴. array를 반환.
+- getElementsByTagName() : 태그 이름으로 가져옴. array를 반환.
+- querySelector() : element를 CSS selector방식으로 검색할 수 있음 (ex. h1:first-child)
+단 하나의 element를 return.
+
+//getElementById()는 하나의 element 반환 (단점: 하위요소 못 가져옴)
+const title = document.getElementById("title");
+console.log(title); 
+
+//getElementsByClassName()는 Array를 반환
+const hellos = document.getElementsByClassName("hello");
+console.log(hellos);
+
+//getElementsByTagName()도 Array를 반환.
+const title2 = document.getElementsByTagName("h1");
+console.log(title2);
+
+//querySelector()는 element를 CSS selector방식으로 검색할 수 있음
+//.hello는 div의 class name을 쓴 것 (div h1 이렇게도 검색 가능)
+//찾았다면 <h1>...</h1>, 찾지 못했다면 null
+//querySelector()는 오직 첫번째 element 1개만 반환
+const title3 = document.querySelector(".hello h1");
+//document.querySelector(".hello h1:first-child");
+
+//querySelector()로 id전달, getElementById("hello")와 같음
+document.querySelector("#hello"); 
+console.log(title3);        //<h1>hello</h1>
+title3.innerText = "hello"; 
+
+//querySelectorAll()는 만약 Array 반환이 필요하다면(다 가져오고 싶다면) 사용
+const title4 = document.querySelectorAll(".hello h1");
+console.log(title4);
+
+
+
+#3.3 Events 
+on이라 되어있는것들은 object들임
+style
+property
+
+//이제 click event를 배운다!
+function handleTitleClick(){
+    title.style.color = "blue";
+    console.log("title was clicked");
+}
+//addEventListener()를 호출하고, listen하고 싶은 event 이름을 알려준다
+//event가 발생하면 호출할 function을 전달
+title.addEventListener("click", handleTitleClick);
+
+페이지에서 element를 찾아오고,
+그 element에 event listener를 추가할 거고,
+유저가 클릭을 하거나 뭔갈 쓰거나 버튼을 누르거나 하면
+그 event들을 listen할 것이고
+그 event에 반응을 해줄 거야
+
+//#3.4 Events part Two
+listen하고 싶은 event를 찾는 가장 좋은 방법은 MDN에 검색해보는 것
+Javascript element 알고싶어
+링크에 Web APIs 포함된 사이트를 열자
+JS관점의 HTML Heading Element
+
+여러 Event 문서들이 있음
+
+
+
+//#3.5 More Events
+addEventListener()를 통해서 event들을 listen할 수도 있고,
+oneventname property에 event listener를 할당함으로써 event를 listen할 수 있다
+1. title.addEventListener하고 넘겨주는거
+addEventListener를 선호하는 이유는 나중에 removeEventListener로 제거할 수 있기 때문임
+2. title.onclick()
+(아래거 대문자 없음 주의) 아래거는 위랑달리 제거할수없어서 잘 안씀
+주석참고
+//document.body, document.head는 콘솔에서 바로 호출 가능
+// 그러나 그 안의 div같은것들은 querySelector로 호출해야 함
+
+여러가지 이벤트사용해봄
+window(창) 관련 이벤트 사용해봄. resize, copy, offline, online
+
+
+#3.6 CSS in Javascript 
+조건문으로 색깔 계속 바뀌게 함
+style 작업에 적합 css
+
+#3.7 CSS in Javascript part Two
+CSS 파일 사용, className 사용
+
+#3.8 CSS in Javascript part Three
+여러개의 클래스 있을때
+classList 사용
+toggle 사용. h1.classList.toggle("clicked");
+toggle은 h1의 classList에 토큰이 이미 있는지 확인한다.
+만약 있다면 제거하고 없다면 추가한다.
